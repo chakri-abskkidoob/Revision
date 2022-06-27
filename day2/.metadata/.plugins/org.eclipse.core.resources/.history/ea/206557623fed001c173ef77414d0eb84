@@ -1,0 +1,37 @@
+package com.revision;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo {
+	public static void data(int length1) {
+		Scanner sc = new Scanner(System.in);
+		Student s = new Student();
+		System.out.println("Enter Roll...");
+		int roll = sc.nextInt();
+		s.setInteger(roll);
+		System.out.println("Enter name...");
+		String name = sc.next();
+		s.setName(name);
+		System.out.println("Enter address...");
+		String address = sc.next();
+		s.setAddress(address);
+		System.out.println("Enter marks...");
+		int marks = sc.nextInt();
+		s.setMarks(marks);
+		ArrayList<Student> s1 = new ArrayList<Student>();
+		s1.add(s);
+		System.out.println(s1);
+		
+		sc.close();
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of students");
+		int length1 = sc.nextInt();
+		data(length1);
+		sc.close();
+	}
+
+}

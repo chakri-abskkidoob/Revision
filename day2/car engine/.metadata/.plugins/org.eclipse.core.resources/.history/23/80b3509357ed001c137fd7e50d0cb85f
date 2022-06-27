@@ -1,0 +1,15 @@
+package com.engine;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Engine e = new Engine(450, 1000, "Tata", true);
+		Car c = new Car("Harrier", "Tata", "Black", e);
+		e.getRmp();
+		e.getManufacturer();
+		e.getPower();
+		e.isTurbo();
+		System.out.println(c);
+	}
+
+}

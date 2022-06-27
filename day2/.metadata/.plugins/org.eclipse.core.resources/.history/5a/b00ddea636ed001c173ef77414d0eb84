@@ -1,0 +1,20 @@
+package com.revision;
+
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		int Students[];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of Students");
+		int length = sc.nextInt();
+		Student s = new Student();
+		System.out.println("Enter Roll...");
+		int roll = sc.nextInt();
+		System.out.println(roll);
+		
+		
+	}
+
+}

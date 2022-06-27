@@ -1,0 +1,104 @@
+1. Benefits of using object oriented languages.
+===============================================
+Object oriented programming:
+============================
+To develop a computer applictaion there are various styles of programming. They are
+1.Procedural programming
+2.Functional programming
+3.Object oriented programming
+
+-->In oops, everythingis based upon concept called objects.
+-->These objects contains data which is called state and operations to be perfromed on these data which is called methods.
+-->So in oops concepts we can see both data and methods in a single objects.
+-->These objects interacts with each other to perform various tasks.
+Benefits:
+=========
+1. Reduce complexity
+2. Easier maintenance
+3. Code reusability
+4. Faster development
+
+==================================================================================
+
+2. Memory allocation available in java.
+=======================================
+There are 5 different types of memory allocations in java.
+Thet are:
+1. Class method area
+2. Heap
+3. Stack
+4. Program counter register
+5. Native method stack
+
+1.Class Method area:
+====================
+-->Class area is the memory block that stores the data of class code
+-->Variable code (static, run time constant)
+-->Method code
+-->Constructor of a java program
+2.Heap:
+=======
+-->It is a memory allocation
+-->It is a memory block where objects are createt or stored
+-->It allocates the memory for class interfaces and arrays
+3.Stack:
+========
+-->Stack is  amemory allocation used to store data and partial results which will be needed while returning values for method and performing memory allocation
+4.Program counter register:
+===========================
+-->Each jvm thread that carries out task of specific method has a program counter register associated with it.
+5.Native method stack:
+======================
+-->It is also called C stacks.
+-->Native method stacks are not writen in java language
+-->This memory is allovated for each thread when its created and it can be fixed or dynamic nature.
+================================================================================
+3. Difference between JDK, JRE and JVM:
+JDK:
+====
+-->Java development kit
+-->It is a software development kit used to develop applications in java
+-->Superset
+JRE:
+====
+-->Java runtime environment
+-->It is a software bundle that provides java class libraries to run java code
+-->Subset of JDK
+JVM:
+====
+-->Java virtual machine
+-->It is an abstract machine that provides an environment to run and execute java bytecode.
+-->Subset of JRE
+================================================================================
+4. Java is platform independent:
+================================
+Java is platform independent because it uses jvm (java virtual machine) to converts bytecode into machine understable code and provides an environment. 
+=================================================================================
+5. Java is not completely object oriented:
+==========================================
+Iava is not completely object oriented, because it uses primitive data types.
+But the primitive data types like int, float are more faster than objects.
+==================================================================================
+6. Overload a static method:
+============================
+No, we can not override a static method.
+Overloading is the mechanism of binding the method call with the method body dynamically based on parameters passed to method call. 
+Static methods are bonded at compile time using static binding so we can not overload a static method.
+7. Is it possible to use static keywords with classes. If yes demonstrate where and how:
+=======================================================================================
+Static keyword is used to share the same variable or method of a given class. 
+It is used for a constant variable or a method that is same for every instance of a class.
+==========================================================================================
+8. Wrapper classes:
+===================
+It is a class whose object contains primitive data types.
+Wrapper classes are used to convert primitive types.
+==========================================================================================
+9. what happens if main() method is not declared as static:
+===========================================================
+If the main method is not declared as static then JVM hAS to create an instance of the main class and since the constructor can be overloaded and can have arguments there would not be any certain and consistent way for jvm to find main method.
+===========================================================================================
+10. 
+Yes, if we write the main method as static public void main() instaed of public static void main() can compile and run successfully.
+
+

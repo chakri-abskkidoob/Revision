@@ -1,0 +1,44 @@
+package com.revision;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo {
+	public static void data() {
+		int Student[];
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of Students");
+		int l1 = sc.nextInt();
+		Student s = new Student();
+		System.out.println("Enter Roll...");
+		int roll = sc.nextInt();
+		s.setInteger(roll);
+		System.out.println("Enter name...");
+		String name = sc.next();
+		s.setName(name);
+		System.out.println("Enter address...");
+		String address = sc.next();
+		s.setAddress(address);
+		System.out.println("Enter marks...");
+		int marks = sc.nextInt();
+		s.setMarks(marks);
+		Student[] studentarr;
+		studentarr = new Student[l1];
+		studentarr[0] = s;
+		int a = studentarr.length;
+		if(a == l1) {
+			data();
+			System.out.println(a);
+			System.out.println(l1);
+		}
+		else {
+			System.out.println(s);
+		}
+	}
+
+	public static void main(String[] args) {
+		data();
+		
+	}
+
+}

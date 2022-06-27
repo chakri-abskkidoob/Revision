@@ -1,0 +1,407 @@
+1. String immutable:
+====================
+-->String is immutable in java because of
+		1.security
+		2.synchronization
+		3.concurrency
+		4.caching
+		5.class loading
+to destroy the immutability we have to give the string as a final so it not allow others to extend it.
+======================================================================================================================================================================================
+2. Difference between equals(), ===operator, compareTo() method:
+================================================================
+equals():
+==========
+--> it is used to compare two strings based upon data or content of the strings.
+--> if same returns true, else false.
+
+==operator:
+============
+--> it is used to compare more than two objects.
+--> if they are reffering to the same object then it returns true else false.
+
+compareTo():
+============
+--> this method tells us how strings are compared lexicographically.
+--> it checks the content of two strings are same or not.
+======================================================================================================================================================================================
+3. Difference between Java Bean and POJO classes:
+==================================================
+Java Bean:
+=========
+--> it is a special pojo which have some restrictions.
+--> it provides complete control on members.
+--> it should implement serializable interface.
+--> fields have only private visibility
+
+POJO:
+=====
+--> it doesn't have special restrictions other than those forced by java language.
+--> it doesn't provide much control on members
+--> it can implement serializable intrerface.
+-->fields can have any visibility.
+======================================================================================================================================================================================
+4. Types of inheritance:
+========================
+		1. Single ineritance
+		2. Multilevel inheritance
+		3. Hierarchical inheritance
+		4. Multiple inheritance
+		5. Hybrid inheritance
+Multiple inheritance is not supported by java because to prevent ambiguity.
+======================================================================================================================================================================================
+5.Polymorphism:
+===============
+Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object. 
+Types:
+=====
+1. complie time polymorphism
+	1.method overloading
+	2.operator overloading
+2. runtime polymorphism
+	1.method overriding
+======================================================================================================================================================================================
+
+6. Student:
+===========
+package com.revision;
+
+public class Student {
+	private int roll;
+	private String name;
+	private String address;
+	private int marks;
+	public Student() {
+		
+	}
+	public Student(int integer, String name, String address, int marks) {
+		super();
+		this.roll = integer;
+		this.name = name;
+		this.address = address;
+		this.marks = marks;
+	}
+	public int getInteger() {
+		return roll;
+	}
+	public void setInteger(int integer) {
+		this.roll = integer;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	@Override
+	public String toString() {
+		return "Student [integer=" + roll + ", name=" + name + ", address=" + address + ", marks=" + marks + "]";
+	}
+	
+}
+
+package com.revision;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Demo {
+	public static ArrayList<Student> data(int length1, ArrayList<Student> s1) {
+		Scanner sc = new Scanner(System.in);
+		Student s = new Student();
+		System.out.println("Enter Roll...");
+		int roll = sc.nextInt();
+		s.setInteger(roll);
+		System.out.println("Enter name...");
+		String name = sc.next();
+		s.setName(name);
+		System.out.println("Enter address...");
+		String address = sc.next();
+		s.setAddress(address);
+		System.out.println("Enter marks...");
+		int marks = sc.nextInt();
+		s.setMarks(marks);
+		
+		s1.add(s);
+		int a = s1.size();
+		if(a<length1) {
+			data(length1, s1);
+		}
+		sc.close();
+		return s1;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of students");
+		int length1 = sc.nextInt();
+		ArrayList<Student> s1 = new ArrayList<Student>();
+		data(length1, s1);
+		sc.close();
+		System.out.println(s1);
+		int sum = 0;
+		for(Student m1 : s1) {
+			sum = sum+m1.getMarks();	
+		}
+		System.out.println(sum/s1.size());
+	}
+
+}
+=========
+output:
+-------
+Enter number of students
+3
+Enter Roll...
+1
+Enter name...
+chakri
+Enter address...
+pakala
+Enter marks...
+937
+Enter Roll...
+2
+Enter name...
+meghana
+Enter address...
+pakala
+Enter marks...
+940
+Enter Roll...
+3
+Enter name...
+mayuri
+Enter address...
+pakala
+Enter marks...
+943
+[Student [integer=1, name=chakri, address=pakala, marks=937], Student [integer=2, name=meghana, address=pakala, marks=940], Student [integer=3, name=mayuri, address=pakala, marks=943]]
+940
+
+======================================================================================================================================================================================
+7. Constructor overloading:
+===========================
+--> it is a technique of having more than one constructor with different parameter lists.
+======================================================================================================================================================================================
+8. Use of final keyword:
+========================
+--> it is a non access modifier used for classes, attributes, methods
+--> useful to store a variable always.
+======================================================================================================================================================================================
+9. Parent class or root class:
+===============================
+--> the object class of the java is the root class which is super class.
+-->all objects, arrays, implement the methods of this class.
+======================================================================================================================================================================================
+10. Car engine:
+===============
+package com.engine;
+
+public class Car extends Engine{
+	private String model;
+	private String companyName;
+	private String color;
+	private Engine engine;
+	public Car(String model, String companyName, String color, Engine engine) {
+		super();
+		this.model = model;
+		this.companyName = companyName;
+		this.color = color;
+		this.engine = engine;
+	}
+	public Car() {
+		// TODO Auto-generated constructor stub
+	}
+	public String getModel() {
+		return model;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public Engine getEngine() {
+		return engine;
+	}
+	public void setEngine(Engine engine) {
+		this.engine = engine;
+	}
+	@Override
+	public String toString() {
+		return "Car [model=" + model + ", companyName=" + companyName + ", color=" + color + ", engine=" + engine + "]";
+	}
+	
+}
+============================
+package com.engine;
+
+public class Engine {
+	private int rmp;
+	private int power;
+	private String manufacturer;
+	private boolean turbo;
+	public int getRmp() {
+		return rmp;
+	}
+	public void setRmp(int rmp) {
+		this.rmp = rmp;
+	}
+	public int getPower() {
+		return power;
+	}
+	public void setPower(int power) {
+		this.power = power;
+	}
+	public String getManufacturer() {
+		return manufacturer;
+	}
+	public void setManufacturer(String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
+	public boolean isTurbo() {
+		return turbo;
+	}
+	public void setTurbo(boolean turbo) {
+		this.turbo = turbo;
+	}
+	public Engine(int rmp, int power, String manufacturer, boolean turbo) {
+		super();
+		this.rmp = rmp;
+		this.power = power;
+		this.manufacturer = manufacturer;
+		this.turbo = turbo;
+	}
+	public Engine() {
+		
+	}
+
+}
+================================================
+package com.engine;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		Engine e = new Engine(450, 1000, "Tata", true);
+		Car c = new Car("Harrier", "Tata", "Black", e);
+		System.out.println("Car Model: "+c.getModel());
+		System.out.println("Car company name: "+c.getCompanyName());
+		System.out.println("Car color: "+c.getColor());
+		System.out.println("Car RPM: "+e.getRmp());
+		System.out.println("Car power: "+e.getPower());
+		System.out.println("Car Engine manufacturer: "+e.getManufacturer());
+		System.out.println("Car Has Turbo: "+e.isTurbo());
+	}
+
+}
+=========================================================================
+output:
+Car Model: Harrier
+Car company name: Tata
+Car color: Black
+Car RPM: 450
+Car power: 1000
+Car Engine manufacturer: Tata
+Car Has Turbo: true
+======================================================================================================================================================================================
+11. Factorial:
+==============
+package com.revision;
+import java.util.*;
+
+public class Factorial {
+	public static void factorial(int a) {
+		int fact = 1;
+		for(int j = 1; j<=a; j++) {
+			fact = fact*j;
+		}
+		System.out.println("Factorial of "+a+":"+fact);
+	}
+
+	public static void main(String[] args) {
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number...");
+		n = sc.nextInt();
+		int array[] = new int[n];
+		System.out.println("Enter items...");
+		for(int a = 0; a<n; a++) {
+			array[a] = sc.nextInt();
+		}
+		if(n > 2) {
+			System.out.println("Error");
+		}
+		else if(n == 2) {
+			int y = array[0]-array[1];
+			if(y<0) {
+				y = y*-1;
+			}
+			factorial(y);
+		}
+		else {
+			factorial(array[0]);
+		}
+		sc.close();
+
+	}
+
+}
+=======
+output:
+=======
+Enter a number...
+3
+Enter items...
+4
+5
+8
+Error
+=====================
+Enter a number...
+1
+Enter items...
+5
+Factorial of 5:120
+====================
+Enter a number...
+2
+Enter items...
+10
+6
+Factorial of 4:24
+=====================
+Enter a number...
+2
+Enter items...
+5
+15
+Factorial of 10:3628800
+=========================
+Enter a number...
+1
+Enter items...
+6
+Factorial of 6:720

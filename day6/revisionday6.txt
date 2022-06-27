@@ -1,0 +1,18 @@
+4.Difference between comparable and comparator:
+===============================================
+-->Comparable should be used when we compare instances of objects ofsame class objects.
+-->Comparator should be used when we compare instances of sobjects of different class objects.
+-->If sorting depend upon naturally then comparable is used.
+-->If sorting depends on attributes of another class objects comparator should be used.
+============================================================================================================================================================================================
+7.Functional Interface:
+=======================
+-->Functional Interface is a type of interface which has an anstract method.
+-->A functional interface can have any number of default methods.
+-->We can represent functional interface using lambda expression from java 8 onwards.
+============================================================================================================================================================================================
+9.Difference between predicate and function in java 8:
+======================================================
+-->Functional Interface is used to do transformation. It can accepts one argument and produces a result.
+-->Predicate can also accept one argument but it can only return boolean value. It is used to test the condition.
+============================================================================================================================================================================================

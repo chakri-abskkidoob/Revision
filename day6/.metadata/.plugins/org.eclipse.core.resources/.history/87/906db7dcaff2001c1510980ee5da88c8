@@ -1,0 +1,20 @@
+package com.revision;
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		HashMap<String, Student> hm = new HashMap<>();
+		
+		hm.put("Andhra pradesh", new Student(1, "Chakri", 937));
+		hm.put("Andhra pradesh", new Student(2, "Meghana", 940));
+		hm.put("Andhra pradesh", new Student(3, "Mayuri", 940));
+		
+		Set<String> states = hm.keySet();
+		
+		for(String state: states) {
+			System.out.println(state);
+		}
+
+	}
+
+}

@@ -1,0 +1,26 @@
+package com.revision;
+import java.util.*;
+
+public class Factorial {
+
+	public static void main(String[] args) {
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a number...");
+		n = sc.nextInt();
+		int array[] = new int[n];
+		System.out.println("Enter items...");
+		for(int a = 0; a<n; a++) {
+			array[a] = sc.nextInt();
+		}
+		if(n == 1) {
+			int fact = 1;
+			for(int a = 0; a<=array.length; a++) {
+				fact = fact*array[a];
+			}
+			System.out.println(fact);
+		}
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.revision;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Address a = new Address("pakala", "Ap", "523101");
+		System.out.println(a);
+	}
+}

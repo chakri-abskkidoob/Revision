@@ -1,0 +1,12 @@
+package com.revision;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		Address a = new Address("pakala", "Ap", "523101");
+		Student s = new Student(1, "java", 30000, a);
+		System.out.println(s);
+	}
+}

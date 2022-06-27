@@ -1,0 +1,136 @@
+1.Difference between checked exception and unchecked exception:
+===============================================================
+Checked exception:
+==================
+-->These exceptions are checked by the compiler at the time of compilation.
+-->Classes that extend throwable class except runtime exception and error are called checked exception.
+-->These exceptions are declared using throws keyword or surrounded by appropriate try/catch block.
+Ex:
+classNotFoundException
+
+Unchecked exception:
+====================
+-->These exceptions are not checked at the time of complilation.
+-->Compiler doesn't force to handle these exceptions.
+ex:
+1.ArithmeticException
+2.ArrayIndexOutOfBoundsException
+
+User-defined checked:
+=====================
+package com.revision;
+
+public class MyException extends Exception{
+	String str1;
+	public MyException(String str2) {
+		str1 = str2;
+	}
+	public String toString() {
+		return ("Output String = "+str1);
+	}
+}
+
+package com.revision;
+
+public class CustomException {
+
+	public static void main(String[] args) {
+		try {
+			throw new MyException("Custom");
+		}catch(MyException exp) {
+			System.out.println("Hi this is my catch block");
+			System.out.println(exp);
+		}
+
+	}
+
+}
+
+Output:
+=======
+Hi this is my catch block
+Output String = Custom
+
+
+Unchecked Exception:
+====================
+package com.revision;
+
+public class UncheckedException {
+
+	public static void main(String[] args) {
+		System.out.println(100/0);
+
+	}
+
+}
+Output:
+========
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+	at com.revision.UncheckedException.main(UncheckedException.java:6)
+
+======================================================================================================================================================================================
+2.Difference between throw and throws keyword:
+==============================================
+Throw:
+======
+-->Throw keywords are used for exception handling.
+-->It should be lies inside the block inside the try block.
+-->It hitys a single exception at the runtime but it can throw any type of exception.
+
+Throws:
+======
+-->This keywords are used to handle to run time exceptions.
+-->It lies utside the block
+-->Can handle more than one or one exception.
+-->but we should mention the type of exception in adjacent to throws keyword.
+
+======================================================================================================================================================================================
+3.Internal working of hashMap:
+==============================
+-->Hashmap is not synchronized.
+-->It allows at most one null key and number of null values.
+-->Since it is not synchronized its performance is faster than hashtanle.
+-->It is introduced starting from collection framework.
+-->hashmap uses hashcode of the key object and this hashcode is further used by the hash function to find the index of bucket where the new entry can be added.
+
+======================================================================================================================================================================================
+4.Internal working of HashSet:
+==============================
+-->When a hashset is created, it internally implements a hashmap.
+-->An element can be inserted into the hashset using add function. 
+-->This internally calls the put function since hashmap would have been internally created.
+-->Hence, set takes in unique values with the help of hashmap.
+
+======================================================================================================================================================================================
+5.Difference between "==" and equals() method:
+==============================================
+"==":
+=====
+-->It checks only references of two objects are equal or not.
+-->It may not be suitable in all times.
+
+equals:
+======
+-->It compares two string objects based on their content.
+-->That provide more logical comparison of two strings objects.
+
+======================================================================================================================================================================================
+7.Why do we need to override equals and hashcode method:
+=========================================================
+-->In order to use own class objects as keys in collections like hashmap, hashtable..etc, we should override hashcode and equals by having an awareness on internal working of collection.
+-->Otherwise it leads us to wrong results, what we are not excepted.
+======================================================================================================================================================================================
+9.Finally and Final keywords:
+=============================
+Final:
+======
+-->Once a variable is declared as final, then the value of the variable could not be changed.
+--> final int a = 12;
+-->If we mark the method as final method theit can't be overridden.
+
+Finally:
+========
+-->If an exception is thrown, finally block will be executed even if no catch block handles the exception.
+-->to stop the execution of finally block we should System.Exit(0) at try/catch block.
+======================================================================================================================================================================================

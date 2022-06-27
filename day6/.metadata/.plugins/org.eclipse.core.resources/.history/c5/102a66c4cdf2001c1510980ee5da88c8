@@ -1,0 +1,43 @@
+package com.revision;
+import java.util.*;
+public class Main {
+
+	public static void main(String[] args) {
+		int marksArr[];
+		HashMap<String, Student> hm = new HashMap<>();
+		
+		hm.put("Andhra pradesh", new Student(3, "Mayuri", 940));
+		hm.put("Andhra pradesh", new Student(2, "Chakri", 950));
+		hm.put("Maharastra",new Student(10,"Ganesh",950));
+		hm.put("Tamilnadu",new Student(12,"Surya",850));
+		hm.put("Telangana",new Student(15,"Venkat",920));
+		hm.put("Haryana",new Student(16,"Dinesh",910));
+		hm.put("Kerala",new Student(18,"Srinu",880));
+
+		
+//		Set<String> states = hm.keySet();
+//		
+//		for(String state: states) {
+//			System.out.println(state);
+//		}
+//
+//		Collection<Student> cols = hm.values();
+//		List<Student> students = new ArrayList<>(cols);
+//		int arr [];
+//		for(Student student: students) {
+//			System.out.println(student.getMarks());
+//			arr
+//		}
+		
+		Set<Map.Entry<String,Student>> set = hm.entrySet();
+		for(Map.Entry<String,Student> me: set) {
+		System.out.println("Toppers Student of State :" + me.getKey());
+		
+		System.out.println("*********************************");
+		Student student = me.getValue();
+		System.out.println("Roll :" + student.getRoll());
+		System.out.println("Name :" + student.getName());
+		System.out.println("Marks :" + student.getMarks());
+	}
+	}
+}

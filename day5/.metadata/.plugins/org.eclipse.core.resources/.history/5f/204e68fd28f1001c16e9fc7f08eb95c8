@@ -1,0 +1,6 @@
+package com.revision;
+
+public class UserDefinedCheckedException extends Exception{
+	String Str;
+	
+}
